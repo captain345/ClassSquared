@@ -1,17 +1,60 @@
 package captain.classsquared;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 
 public class MainPage extends Activity {
+
+    private EditText mNameField;
+    private Button mStudentButton;
+    private Button mTeacherButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
+
+        mNameField = (EditText)findViewById(R.id.editTextMain);
+        mStudentButton = (Button)findViewById(R.id.buttonStudent);
+        mTeacherButton = (Button)findViewById(R.id.buttonTeacher);
+
+
+        mStudentButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String name = mStudentButton.getText().toString();
+                startStudent(name);
+            }
+        });
+
+        mTeacherButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String name = mTeacherButton.getText().toString();
+                startTeacher(name);
+            }
+        });
+    }
+
+    private void startStudent(String name){
+        Intent intent = new Intent(this, StudentActivity.class);
+        intent.putExtra("name", name);
+        startActivity(intent);
+    }
+
+
+    private void startTeacher(String name){
+        /*Intent intent = new Intent(this, TeacherActivity.class);
+        intent.putExtra("name", name);
+        startActivity(intent);*/
     }
 
 
@@ -36,4 +79,6 @@ public class MainPage extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }

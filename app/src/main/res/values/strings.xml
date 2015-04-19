@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Class Squared</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_student">Class Squared</string>
+
+    <string name="hello_world">Hello world!</string>
 </resources>
