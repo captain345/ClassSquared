@@ -11,25 +11,28 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Welcome to Class Squared Please Select an Option"
         android:id="@+id/textView"
+        android:textSize="24sp"
+        android:textAlignment="center"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:textSize="34sp" />
+        android:elegantTextHeight="false" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/button"
-        android:layout_marginStart="214dp"
-        android:layout_alignTop="@+id/button2"
+        android:text="I&apos;m a Student"
+        android:id="@+id/buttonStudent"
+        android:textSize="20sp"
+        android:layout_centerVertical="true"
         android:layout_alignStart="@+id/textView" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/button2"
-        android:layout_centerVertical="true"
-        android:layout_toEndOf="@+id/button"
-        android:layout_marginStart="59dp" />
+        android:text="I&apos;m a Teacher"
+        android:id="@+id/buttonTeacher"
+        android:textSize="20sp"
+        android:layout_alignTop="@+id/buttonStudent"
+        android:layout_alignEnd="@+id/textView" />
+
 </RelativeLayout>
