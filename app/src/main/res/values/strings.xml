@@ -2,6 +2,12 @@
     <string name="app_name">Class Squared</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_student">Class Squared</string>
-
     <string name="hello_world">Hello world!</string>
+    <string name="key_name">name</string>
+
+    <!--this is for the activities-->
+    <string name="student_button">I\'m a Student</string>
+    <string name="teacher_button">I\'m a Teacher</string>
+    <string name="edit_name">Enter Your Name Here</string>
+
 </resources>

@@ -20,7 +20,8 @@
         <activity
             android:name=".StudentActivity"
             android:label="@string/title_activity_student"
-            android:parentActivityName=".MainPage" >
+            android:parentActivityName=".MainPage"
+            android:screenOrientation="landscape" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="captain.classsquared.MainPage" />

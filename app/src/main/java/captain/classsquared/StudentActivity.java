@@ -19,11 +19,12 @@ public class StudentActivity extends Activity {
         setContentView(R.layout.activity_student);
 
         Intent intent = getIntent();
-        String name = intent.getStringExtra("name");
+        String name = intent.getStringExtra(getString(R.string.key_name));
+
         if(name == null){
             name = "Friend";
         }
-        
+
         Log.d(TAG, name);
     }
 

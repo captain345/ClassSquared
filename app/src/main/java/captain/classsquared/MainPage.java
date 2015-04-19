@@ -46,7 +46,7 @@ public class MainPage extends Activity {
 
     private void startStudent(String name){
         Intent intent = new Intent(this, StudentActivity.class);
-        intent.putExtra("name", name);
+        intent.putExtra(getString(R.string.key_name), name);
         startActivity(intent);
     }
 

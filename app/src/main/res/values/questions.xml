@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="question1">Heres Test Question 1</string>
+    <string name="question1">Here\'s Test Question 1</string>
     <string name="question1A">This is the answer</string>
     <string name="question1R1">This is a wrong answer</string>
     <string name="question1R2">This is the second wrong answer</string>
     <string name="question1R3">This is the third wrong answer</string>
 
-    <string name="question2">Heres Test Question 2</string>
+    <string name="question2">Here\'s Test Question 2</string>
     <string name="question2A">This is the answer</string>
     <string name="question2R1">This is a wrong answer</string>
     <string name="question2R2">This is the second wrong answer</string>
     <string name="question2R3">This is the third wrong answer</string>
 
-    <string name="question3">Heres Test Question 3</string>
+    <string name="question3">Here\'s Test Question 3</string>
     <string name="question3A">This is the answer</string>
     <string name="question3R1">This is a wrong answer</string>
     <string name="question3R2">This is the second wrong answer</string>
