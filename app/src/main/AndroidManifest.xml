@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainPage"
+            android:name=".ui.MainPage"
             android:label="@string/app_name"
             android:screenOrientation="landscape" >
             <intent-filter>
@@ -18,13 +18,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".StudentActivity"
+            android:name=".ui.StudentActivity"
             android:label="@string/title_activity_student"
-            android:parentActivityName=".MainPage"
+            android:parentActivityName=".ui.MainPage"
             android:screenOrientation="landscape" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="captain.classsquared.MainPage" />
+                android:value=".ui.MainPage" />
         </activity>
     </application>
 
