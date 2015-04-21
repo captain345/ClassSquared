@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/question1"
+        android:text="Sample"
         android:id="@+id/studentQuestion"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
@@ -29,14 +29,14 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/question1A"
+            android:text="Sample"
             android:id="@+id/radioA1"
             android:checked="false"/>
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/question1R1"
+            android:text="Sample"
             android:id="@+id/radioA2"
             android:layout_marginTop="20dp"
             android:checked="false"/>
@@ -44,7 +44,7 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/question2R3"
+            android:text="Sample"
             android:id="@+id/radioA4"
             android:layout_marginTop="20dp"
             android:checked="false"/>
@@ -52,7 +52,7 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/question1R2"
+            android:text="Sample"
             android:id="@+id/radioA3"
             android:layout_marginTop="20dp"
             android:checked="false"/>
@@ -76,9 +76,8 @@
         android:text="Current Score: "
         android:id="@+id/scoreTextView"
         android:textSize="24sp"
-        android:layout_alignParentTop="true"
-        android:layout_alignEnd="@+id/radioAnswers"
-        android:layout_marginEnd="97dp" />
+        android:layout_below="@+id/studentQuestion"
+        android:layout_toEndOf="@+id/nameTextView" />
 
     <TextView
         android:layout_width="wrap_content"

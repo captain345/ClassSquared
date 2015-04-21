@@ -28,8 +28,8 @@
         android:layout_centerVertical="true"
         android:layout_alignStart="@+id/instructionText"
         android:text="@string/student_button"
-        android:background="@android:color/white"
-        android:textColor="#ff4dac49"
+        android:background="#ff4dab49"
+        android:textColor="@android:color/white"
         android:paddingRight="10dp"
         android:paddingLeft="10dp" />
 
@@ -41,8 +41,8 @@
         android:textSize="22sp"
         android:layout_centerVertical="true"
         android:layout_alignEnd="@+id/instructionText"
-        android:background="@android:color/white"
-        android:textColor="#ff4dac49"
+        android:background="#ff4dab49"
+        android:textColor="@android:color/white"
         android:paddingRight="10dp"
         android:paddingLeft="10dp" />
 
@@ -51,12 +51,15 @@
         android:layout_height="wrap_content"
         android:id="@+id/editTextMain"
         android:textSize="22sp"
-        android:singleLine="false"
+        android:singleLine="true"
         android:hint="@string/edit_name"
         android:maxLength="20"
         android:layout_above="@+id/buttonStudent"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="22dp" />
+        android:layout_marginBottom="22dp"
+        android:enabled="true"
+        android:autoText="true"
+        android:inputType="textPersonName" />
 
     <TextView
         android:layout_width="wrap_content"

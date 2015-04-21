@@ -26,6 +26,22 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.MainPage" />
         </activity>
+        <activity
+            android:name=".ui.EndPage"
+            android:label="@string/title_activity_end_page"
+            android:parentActivityName=".ui.StudentActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="captain.classsquared.ui.StudentActivity" />
+        </activity>
+        <activity
+            android:name=".ui.TeacherActivity"
+            android:label="@string/title_activity_teacher_activty"
+            android:parentActivityName=".ui.MainPage" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="captain.classsquared.ui.MainPage" />
+        </activity>
     </application>
 
 </manifest>

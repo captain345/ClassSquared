@@ -9,5 +9,7 @@
     <string name="student_button">I\'m a Student</string>
     <string name="teacher_button">I\'m a Teacher</string>
     <string name="edit_name">Enter Your Name Here</string>
+    <string name="title_activity_end_page">End of Task</string>
+    <string name="title_activity_teacher_activty">Teacher Panel</string>
 
 </resources>

@@ -31,7 +31,7 @@ public class MainPage extends Activity {
         mStudentButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String name = mStudentButton.getText().toString();
+                String name = mNameField.getText().toString();
                 startStudent(name);
             }
         });
@@ -53,10 +53,15 @@ public class MainPage extends Activity {
 
 
     private void startTeacher(String name){
-        /*Intent intent = new Intent(this, TeacherActivity.class);
+        Intent intent = new Intent(this, TeacherActivity.class);
         intent.putExtra("name", name);
-        startActivity(intent);*/
+        startActivity(intent);
     }
+
+
+
+
+
 
 
     @Override
@@ -68,9 +73,9 @@ public class MainPage extends Activity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+        //Handle action bar item clicks here. The action bar will
+        //automatically handle clicks on the Home/Up button, so long
+        //as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement

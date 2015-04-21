@@ -3,10 +3,12 @@ package captain.classsquared.ui;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import captain.classsquared.R;
@@ -16,16 +18,18 @@ import captain.classsquared.model.QuestionStore;
 
 public class StudentActivity extends Activity {
 
-    public static final  String TAG = StudentActivity.class.getSimpleName();
     private QuestionStore mStore = new QuestionStore();
     private TextView mQuestionView;
     private TextView mStudentName;
-    private RadioButton mChoice1;
-    private RadioButton mChoice2;
-    private RadioButton mChoice3;
-    private RadioButton mChoice4;
-
+    private TextView mScore;
+    private RadioGroup mRadioGroup;
+    private Button mButton;
+    private Question mCurrentPage;
+    private int mPageNumber = 0;
     private String mName;
+    private String scoreView;
+    private int score = 0;
+    private int incorrect = 0;
 
 
     @Override
@@ -40,28 +44,61 @@ public class StudentActivity extends Activity {
             mName = "Friend";
         }
 
-        Log.d(TAG, mName);
-
         mQuestionView = (TextView)findViewById(R.id.studentQuestion);
         mStudentName = (TextView)findViewById(R.id.nameTextView);
-        mChoice1 = (RadioButton)findViewById(R.id.radioA1);
-        mChoice2 = (RadioButton)findViewById(R.id.radioA2);
-        mChoice3 = (RadioButton)findViewById(R.id.radioA3);
-        mChoice4 = (RadioButton)findViewById(R.id.radioA4);
+        mScore = (TextView)findViewById(R.id.scoreTextView);
+        mRadioGroup = (RadioGroup)findViewById(R.id.radioAnswers);
+        mButton = (Button)findViewById(R.id.nextButton);
+        loadQuestion(0);
     }
 
-    private void loadQuestion(){
-        Question store = mStore.getQuestionNumber(0);
-        String nameView ="Hi" + mName + "Welcome to Class Squared";
+    private void loadQuestion(int choice) {
+        mCurrentPage = mStore.getQuestionNumber(choice);
+        String nameView = "Hi " + mName + " Welcome to Class Squared";
 
+        scoreView = "Correct: " + score + "\n"  + "Wrong: " + incorrect;
+
+        mScore.setText(scoreView);
         mStudentName.setText(nameView);
-        mQuestionView.setText(store.getQuestion());
-        mChoice1.setText(store.getChoice1().getText());
-        mChoice2.setText(store.getChoice2().getText());
-        mChoice3.setText(store.getChoice3().getText());
-        mChoice4.setText(store.getChoice4().getText());
+        mQuestionView.setText(mCurrentPage.getQuestion());
 
+        for (int i = 0; i < mRadioGroup.getChildCount(); i++) {
+            ((RadioButton) mRadioGroup.getChildAt(i)).setText(mCurrentPage.getPossibleAnswers(i));
+            (mRadioGroup.getChildAt(i)).setId(i);
+        }
+
+            mButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (mRadioGroup.getCheckedRadioButtonId() == mCurrentPage.getCorrect()) {
+                        score++;
+                    } else {
+                        incorrect++;
+                    }
+
+                    mPageNumber++;
+
+                    if(mPageNumber == mStore.getArrayLength()){
+                        finishQuiz(score, incorrect);
+                    }
+                    else{
+                        loadQuestion(mPageNumber);
+                    }
+
+                }
+            });
     }
+
+
+    private void finishQuiz(int score, int incorrect){
+        Intent intent = new Intent(this, EndPage.class);
+        intent.putExtra("score", score);
+        intent.putExtra("incorrect", incorrect);
+        intent.putExtra("name", mName);
+        startActivity(intent);
+    }
+
+
 
 
 
