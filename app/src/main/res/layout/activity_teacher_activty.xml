@@ -12,9 +12,10 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Currently Under Construction This Will Be Where The Teacher Works From"
-        android:id="@+id/textView2"
-        android:layout_centerVertical="true"
+        android:text="Ms Doe"
+        android:id="@+id/teacherName"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:textSize="24sp"/>
+        android:textSize="36sp" />
+
 </RelativeLayout>
